@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navbar {
+    @apply flex justify-between items-center h-20 bg-white dark:bg-black-500 text-black-500 dark:text-white shadow-md font-roboto px-10;
+  }
+
+  .navbar ul {
+    @apply flex justify-between items-center;
+  }
+
+  .navbar li {
+    @apply p-5;
+  }
+}

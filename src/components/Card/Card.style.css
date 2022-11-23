@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+    @apply shadow-sm w-full bg-white mb-5 h-60 inline-block align-top col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 2xl:col-span-2 border-primary-300 border-2;
+  }
+}
