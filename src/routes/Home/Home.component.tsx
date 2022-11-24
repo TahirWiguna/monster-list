@@ -41,20 +41,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div className="area bg-primary-100 dark:bg-black-300">
-        <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
       {<Searchbox onChangeHandler={onChangeHandler} />}
       {<CardList monsters={filteredMonsters} />}
     </div>

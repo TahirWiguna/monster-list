@@ -1,10 +1,12 @@
 // import "./SignInCard.style.css"
 
+import Logo from "../../logo.svg"
+
 const SignInCard = () => {
   return (
     <div className="sign-in-card">
       <div className="header">
-        <h1>Sign In</h1>
+        <img src={Logo} alt="logo" width="150px" className="mx-auto" />
       </div>
       <div className="body flex justify-center flex-col">
         <input type="text" placeholder="Username" className="mb-2 mx-auto" />
@@ -15,7 +17,7 @@ const SignInCard = () => {
         />
       </div>
       <div className="footer flex justify-center items-center">
-        <button className="btn mx-auto w-[25%] min-w-[300px]">Sign In</button>
+        <button className="btn mx-auto w-[75%]">Sign In</button>
       </div>
     </div>
   )

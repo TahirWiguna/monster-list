@@ -1,6 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap");
@@ -23,6 +21,10 @@ body {
 }
 
 @layer components {
+  body {
+    @apply bg-white dark:bg-black-300;
+  }
+
   .navbar {
     @apply flex justify-between items-center h-20 bg-white dark:bg-black-500 text-black-500 dark:text-white shadow-md font-roboto px-10 transition;
   }
@@ -32,7 +34,7 @@ body {
   }
 
   .navbar li {
-    @apply p-5;
+    @apply px-5;
   }
 
   .card {
@@ -44,15 +46,15 @@ body {
   }
 
   .searchbox {
-    @apply p-4 shadow-sm mx-auto;
+    @apply p-4 shadow-sm mx-auto w-[25%];
   }
 
   .sign-in-card {
-    @apply bg-white shadow-md w-[30%] min-w-[250px] max-w-[500px] mx-auto mt-4 py-10;
+    @apply bg-white dark:bg-black-400 shadow-md w-[30%] min-w-[250px] max-w-[500px] mx-auto mt-10 pb-10;
   }
 
   input {
-    @apply border-[2px] border-primary-300 focus:border-primary-400 bg-white dark:bg-black-100 dark:text-white text-center min-w-[300px] w-[25%] p-4;
+    @apply border-[2px] border-primary-300 dark:border-primary-500 focus:border-primary-400 dark:focus:border-primary-300 bg-white dark:bg-black-100 dark:text-white text-center w-[75%] p-4;
   }
 
   .home {
@@ -60,23 +62,23 @@ body {
   }
 
   .btn {
-    @apply p-4 border-primary-300 dark:border-primary-500 border-2 bg-primary-300 dark:bg-black-300 text-white dark:text-white font-bold;
+    @apply p-4 border-primary-300 dark:border-primary-500 focus:border-primary-400 dark:active:border-primary-300 border-2 bg-primary-300 dark:bg-black-300 text-white dark:text-primary-100 font-bold;
   }
 }
 
-.home .context {
+.context {
   width: 100%;
   position: absolute;
   top: 50vh;
 }
 
-.home .context h1 {
+.context h1 {
   text-align: center;
   color: #fff;
   font-size: 50px;
 }
 
-.home .area {
+.area {
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   width: 100%;
   height: 100vh;
@@ -86,7 +88,7 @@ body {
   z-index: -1;
 }
 
-.home .circles {
+.circles {
   position: absolute;
   top: 0;
   left: 0;
@@ -95,7 +97,7 @@ body {
   overflow: hidden;
 }
 
-.home .circles li {
+.circles li {
   position: absolute;
   display: block;
   list-style: none;
@@ -106,14 +108,14 @@ body {
   bottom: -150px;
 }
 
-.home .circles li:nth-child(1) {
+.circles li:nth-child(1) {
   left: 25%;
   width: 80px;
   height: 80px;
   animation-delay: 0s;
 }
 
-.home .circles li:nth-child(2) {
+.circles li:nth-child(2) {
   left: 10%;
   width: 20px;
   height: 20px;
@@ -121,14 +123,14 @@ body {
   animation-duration: 12s;
 }
 
-.home .circles li:nth-child(3) {
+.circles li:nth-child(3) {
   left: 70%;
   width: 20px;
   height: 20px;
   animation-delay: 4s;
 }
 
-.home .circles li:nth-child(4) {
+.circles li:nth-child(4) {
   left: 40%;
   width: 60px;
   height: 60px;
@@ -136,28 +138,28 @@ body {
   animation-duration: 18s;
 }
 
-.home .circles li:nth-child(5) {
+.circles li:nth-child(5) {
   left: 65%;
   width: 20px;
   height: 20px;
   animation-delay: 0s;
 }
 
-.home .circles li:nth-child(6) {
+.circles li:nth-child(6) {
   left: 75%;
   width: 110px;
   height: 110px;
   animation-delay: 3s;
 }
 
-.home .circles li:nth-child(7) {
+.circles li:nth-child(7) {
   left: 35%;
   width: 150px;
   height: 150px;
   animation-delay: 7s;
 }
 
-.home .circles li:nth-child(8) {
+.circles li:nth-child(8) {
   left: 50%;
   width: 25px;
   height: 25px;
@@ -165,7 +167,7 @@ body {
   animation-duration: 45s;
 }
 
-.home .circles li:nth-child(9) {
+.circles li:nth-child(9) {
   left: 20%;
   width: 15px;
   height: 15px;
@@ -173,7 +175,7 @@ body {
   animation-duration: 35s;
 }
 
-.home .circles li:nth-child(10) {
+.circles li:nth-child(10) {
   left: 85%;
   width: 150px;
   height: 150px;
@@ -194,3 +196,6 @@ body {
     border-radius: 50%;
   }
 }
+
+@tailwind components;
+@tailwind utilities;
