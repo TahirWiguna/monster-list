@@ -1,6 +1,6 @@
-import "./Home.style.css"
-import Searchbox from "../components/Searchbox/Searchbox.component"
-import CardList from "../components/CardList/CardList.component"
+// import "./Home.style.css"
+import Searchbox from "../../components/Searchbox/Searchbox.component"
+import CardList from "../../components/CardList/CardList.component"
 
 import axios from "axios"
 import { useEffect, useState, ChangeEvent } from "react"

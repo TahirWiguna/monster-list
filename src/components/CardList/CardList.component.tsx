@@ -1,6 +1,6 @@
-import "./CardList.style.css"
+// import "./CardList.style.css"
 import Card from "../Card/Card.component"
-import { Monster } from "./../../routes/Home.component"
+import { Monster } from "../../routes/Home/Home.component"
 
 type CardListProps = {
   monsters: Monster[]

@@ -3,7 +3,4 @@
 @tailwind utilities;
 
 @layer components {
-  .searchbox {
-    @apply p-4 border-[3px] border-primary-300 focus:border-primary-400 text-center min-w-[300px] w-[25%] mx-auto shadow-sm;
-  }
 }

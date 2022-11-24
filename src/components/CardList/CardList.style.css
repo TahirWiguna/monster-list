@@ -3,7 +3,4 @@
 @tailwind utilities;
 
 @layer components {
-  .card-list {
-    @apply w-full grid grid-cols-12 gap-6 mt-10;
-  }
 }
