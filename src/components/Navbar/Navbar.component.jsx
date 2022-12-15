@@ -4,8 +4,15 @@ import { Outlet } from "react-router-dom"
 import { Link } from "react-router-dom"
 import Logo from "../../logo.svg"
 import { BsCloudSunFill, BsCloudMoon } from "react-icons/bs"
+import { useSelector } from "react-redux"
+import { selectCurrentUser } from "../../store/user/user.selector"
+import { useDispatch } from "react-redux"
+import { SignOutStart } from "../../store/user/user.action"
 
 const Navbar = () => {
+  const dispatch = useDispatch()
+  const currentUser = useSelector(selectCurrentUser)
+
   const [theme, setTheme] = useState("")
 
   const themeChangeHandler = () => {
@@ -17,6 +24,11 @@ const Navbar = () => {
       document.documentElement.classList.add("dark")
     }
   }
+
+  const signOutHandler = () => {
+    dispatch(SignOutStart(currentUser.token))
+  }
+
   return (
     <Fragment>
       <div className="navbar">
@@ -38,12 +50,20 @@ const Navbar = () => {
                 <BsCloudMoon size={20} className="cursor-pointer" />
               )}
             </li>
-            {/* <li>
-              <Link to="learn">Learn More</Link>
-            </li> */}
-            <li>
-              <Link to="signin">Sign In</Link>
-            </li>
+            {currentUser ? (
+              <>
+                <li>
+                  <Link to="admin">Admin Panel</Link>
+                </li>
+                <li>
+                  <button onClick={signOutHandler}>Sign Out</button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link to="signin">Sign In</Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

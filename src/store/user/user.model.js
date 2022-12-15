@@ -7,9 +7,14 @@ export async function SignIn({ username, password }) {
       password,
     })
     .then((response) => {
-      return { data: response }
+      return response.data
     })
     .catch((error) => {
-      return { error: error.message || "Oops! Something went wrong." }
+      return {
+        error:
+          error?.response?.data?.message ??
+          error.message ??
+          "Sign in failed. Please try again later.",
+      }
     })
 }

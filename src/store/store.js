@@ -10,7 +10,7 @@ import { rootSaga } from "./root-saga"
 const persistConfig = {
   key: "monster-finders",
   storage,
-  blacklist: "user",
+  whitelist: "user",
 }
 
 const sagaMiddleware = createSagaMiddleware()

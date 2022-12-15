@@ -50,7 +50,7 @@ body {
   }
 
   .sign-in-card {
-    @apply bg-white dark:bg-black-400 shadow-md w-[30%] min-w-[250px] max-w-[500px] mx-auto mt-10 pb-10;
+    @apply bg-white dark:bg-black-400 shadow-md w-[90%] max-w-[375px] mx-auto mt-10 p-1 pb-10;
   }
 
   input {
@@ -62,7 +62,37 @@ body {
   }
 
   .btn {
-    @apply p-4 border-primary-300 dark:border-primary-500 focus:border-primary-400 dark:active:border-primary-300 border-2 bg-primary-300 dark:bg-black-300 text-white dark:text-primary-100 font-bold;
+    @apply p-4 border-primary-300 dark:border-primary-500 focus:border-primary-400 dark:active:border-primary-300 border-2 bg-primary-300 dark:bg-black-300 text-white dark:text-primary-100 font-bold relative h-[60px];
+  }
+}
+
+.btn {
+  transition: width 0.25s ease-out;
+}
+
+.btn.is-loading::after {
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    rotate: 0turn;
+  }
+
+  to {
+    rotate: 1turn;
   }
 }
 
