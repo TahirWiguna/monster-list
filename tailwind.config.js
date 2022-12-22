@@ -19,6 +19,8 @@ module.exports = {
         400: "#c37e15",
         500: "#925e10",
       },
+      accent: "#EA047E",
+      accent2: "#FCE700",
       transparent: "transparent",
       current: "currentColor",
       black: {
